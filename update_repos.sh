@@ -18,6 +18,7 @@ for repo in $QIIME_REPOS; do
         unstaged+=($repo)
     else
         git checkout master &&
+        git fetch upstream --tags &&
         git pull upstream master &&
         git push origin master
     fi
